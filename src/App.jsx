@@ -32,9 +32,15 @@ function App() {
   )
 }
 
-function god() {
+// App.jsx
+import Greeting from "./Greeting";
+
+function Not() {
   return (
-    <h1>Hello, World!</h1>
+    <div>
+      <Greeting />
+    </div>
   );
 }
-export default god;
+
+export default Not;
