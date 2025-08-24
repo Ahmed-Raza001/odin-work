@@ -45,7 +45,7 @@ function Not() {
 
 export default Not;*/
 
-const COLORS = ["pink", "green", "blue", "yellow", "purple", "red"];
+/*const COLORS = ["pink", "green", "blue", "yellow", "purple", "red"];
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
@@ -74,5 +74,88 @@ function App() {
     </div>
   );
 }
+export default App;*/
 
-export default App;
+/*import { Component } from "react";
+
+class ClassInput extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      todos: [],
+      inputVal: "",
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleInputChange(e) {
+    this.setState({
+      inputVal: e.target.value,
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState((state) => ({
+      todos: [...state.todos, state.inputVal],
+      inputVal: "",
+    }));
+  }
+
+  render() {
+    return (
+      <section>
+        <h3>{this.props.name}</h3>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="task-entry">Enter a task: </label>
+          <input
+            type="text"
+            id="task-entry"
+            name="task-entry"
+            value={this.state.inputVal}
+            onChange={this.handleInputChange}
+          />
+          <button type="submit">Submit</button>
+        </form>
+        <h4>All the tasks!</h4>
+        <ul>
+          {this.state.todos.map((todo) => (
+            <li key={todo}>{todo}</li>
+          ))}
+        </ul>
+      </section>
+    );
+  }
+}
+
+export default ClassInput;*/
+
+
+// App.test.jsx
+
+/*import { describe, it, expect } from "vitest";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import App from "./App";*/
+
+describe("App component", () => {
+  it("renders magnificent monkeys", () => {
+    // screen પાસે container નથી, એટલે container મેળવવા માટે render માંથી destructure કરીશું
+    const { container } = render(<App />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it("renders radical rhinos after button click", async () => {
+    const user = userEvent.setup();
+
+    render(<App />);
+    const button = screen.getByRole("button", { name: "Click Me" });
+
+    await user.click(button);
+
+    expect(screen.getByRole("heading").textContent).toMatch(/radical rhinos/i);
+  });
+});
